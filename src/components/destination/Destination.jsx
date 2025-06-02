@@ -1,17 +1,25 @@
-import { useState } from 'react';
-import planetsData from '/public/data/destination.json';
+import { useEffect, useState } from 'react';
 import './Destination.css';
 
 const Destination = () => {
+  const [planets, setPlanets] = useState([]);
   const [selectedPlanet, setSelectedPlanet] = useState(0);
-  const planets = planetsData.planets;
+
+  useEffect(() => {
+    fetch('/data/destination.json')
+      .then((res) => res.json())
+      .then((data) => setPlanets(data.planets))
+      .catch((err) => console.error('Erreur de chargement JSON', err));
+  }, []);
+
+  if (planets.length === 0) return <p>Chargement...</p>;
+
   const currentPlanet = planets[selectedPlanet];
 
   return (
     <section className="destination grid container">
-      <h2 class="numbered-title"><span>01</span> Pick your destination</h2>
+      <h2 className="numbered-title"><span>01</span> Pick your destination</h2>
 
-      
       <div className="destination-content grid">
         <picture className="destination-image">
           <img src={currentPlanet.image} alt={currentPlanet.id} />
