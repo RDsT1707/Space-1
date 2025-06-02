@@ -1,0 +1,240 @@
+.home {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding-inline: 1rem;
+  background: url('/public/img/assets/home/background-home-mobile.jpg')
+    center center / cover no-repeat;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 13, 23, 0.6);
+}
+
+.home > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Tablette */
+@media (min-width: 35em) {
+  .home {
+    background: url('/public/img/assets/home/background-home-tablet.jpg')
+      center center / cover no-repeat;
+  }
+}
+
+/* Desktop */
+@media (min-width: 45em) {
+  .home {
+    align-items: end;
+    padding-bottom: max(6rem, 20vh);
+    background: url('/public/img/assets/home/background-home-desktop.jpg')
+      bottom center / cover no-repeat;
+  }
+}
+
+.home-content {
+  --gap: 2rem;
+  text-align: center;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Tablette */
+@media (min-width: 35em) {
+  .home-content {
+    --gap: 4rem;
+    padding: 2rem;
+    max-width: 90%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 45em) {
+  .home-content {
+    --gap: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: end;
+    text-align: left;
+    column-gap: var(--gap, 2rem);
+    max-width: none;
+    padding: 0;
+  }
+}
+
+/* Premier div = texte titre + sous-texte */
+.home-content > div:first-child {
+  --flow-space: 1rem;
+}
+
+@media (min-width: 35em) {
+  .home-content > div:first-child {
+    --flow-space: 1.25rem;
+  }
+}
+
+@media (min-width: 45em) {
+  .home-content > div:first-child {
+    --flow-space: 1.5rem;
+  }
+}
+
+/* TITRE : responsive */
+.home-content > div:first-child > h1 {
+  font-family: var(--ff-sans-normal);
+  font-size: clamp(1.5rem, 4vw, var(--fs-500));
+  margin: 0;
+  line-height: 1.1;
+  color: var(--color-light);
+}
+
+@media (min-width: 35em) {
+  .home-content > div:first-child > h1 {
+    font-size: clamp(2rem, 5vw, var(--fs-500));
+  }
+}
+
+@media (min-width: 45em) {
+  .home-content > div:first-child > h1 {
+    font-size: var(--fs-500);
+  }
+}
+
+/* TEXTE SOUS LE TITRE : responsive */
+.home-text {
+  font-family: var(--ff-sans-normal);
+  font-size: clamp(0.875rem, 2.5vw, calc(var(--fs-500) * 0.65));
+  color: var(--color-light);
+  max-width: 100%;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 35em) {
+  .home-text {
+    max-width: 50ch;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 45em) {
+  .home-text {
+    font-size: calc(var(--fs-500) * 0.65);
+    max-width: 45ch;
+    margin-inline: 0;
+  }
+}
+
+/* IMAGE : responsive */
+.home-content > div:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (min-width: 35em) {
+  .home-content > div:nth-child(2) {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 45em) {
+  .home-content > div:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+/* image en elle-même */
+.home-content > div:nth-child(2) img {
+  height: clamp(2.5rem, 8vw, 3.5rem);
+  width: auto;
+  object-fit: contain;
+  max-width: 80%;
+}
+
+@media (min-width: 35em) {
+  .home-content > div:nth-child(2) img {
+    height: clamp(3rem, 6vw, 3.5rem);
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 45em) {
+  .home-content > div:nth-child(2) img {
+    height: 3.5rem;
+    max-width: 100%;
+  }
+}
+
+/* Bouton : responsive */
+.large-button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 0 1.5em;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+}
+
+@media (min-width: 35em) {
+  .large-button {
+    padding: 0 1.75em;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 45em) {
+  .large-button {
+    padding: 0 2em;
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+.large-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: hsl(var(--clr-white) / 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+/* Optimisations mobile spécifiques */
+@media (max-width: 34.99em) {
+  .home {
+    padding-inline: 0.75rem;
+    min-height: 100svh; /* Support pour les navigateurs mobiles */
+  }
+  
+  .home-content {
+    gap: 1.5rem;
+  }
+  
+  .home-content > div:first-child > h1 {
+    margin-bottom: 0.75rem;
+  }
+  
+  .home-text {
+    margin-top: 0.75rem;
+    padding-inline: 0.5rem;
+  }
+}

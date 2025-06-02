@@ -1,0 +1,193 @@
+.crew {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding-inline: 1rem;
+  background: url('/public/img/assets/crew/background-crew-desktop.jpg') center center / cover no-repeat;
+}
+
+.crew::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 13, 23, 0.6);
+}
+
+.crew > * {
+  position: relative;
+  z-index: 1;
+}
+.crew-content img {
+  max-height: 400px; /* Limite verticale */
+  max-width: 100%;   /* Empêche débordement horizontal */
+  width: auto;       /* Laisse la largeur s’adapter */
+  height: auto;      /* Respecte le ratio */
+  object-fit: contain;
+}
+
+
+@media (min-width: 45em) {
+  .crew {
+    align-items: end;
+  }
+}
+
+/* Main layout container */
+.crew-content {
+  --gap: 8rem;
+  text-align: center;
+}
+
+@media (min-width: 45em) {
+  .crew-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    column-gap: var(--gap, 2rem);
+  }
+}
+
+/* Text block */
+.crew-content > div:first-child {
+  --flow-space: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--flow-space);
+}
+
+.crew-content h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #d0d6f9;
+  font-family: var(--ff-sans-condensed, 'Barlow Condensed', sans-serif);
+}
+
+.crew-content h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Bellefair', serif;
+  color: #fff;
+  margin: 0;
+}
+
+.crew-content .crew-name {
+  font-size: 2.5rem;
+  font-family: 'Bellefair', serif;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.crew-content .crew-bio {
+  font-size: 1.1rem;
+  color: #d0d6f9;
+  max-width: 45ch;
+}
+
+/* Navigation dots */
+.crew-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: rem;
+  justify-content: center;
+}
+
+.crew-nav button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff44;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.crew-nav button.active,
+.crew-nav button:hover {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+.crew-nav button .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Image container */
+.crew-content > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.crew-content img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+@media (min-width: 45em) {
+  .crew-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    align-items: center;
+    column-gap: 5rem;
+  }
+
+  .crew-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .crew-content h2 {
+    font-size: 2rem;
+  }
+
+  .crew-content h3.crew-name {
+    font-size: 2.5rem;
+  }
+
+  .crew-bio {
+    font-size: 1.1rem;
+  }
+
+  .crew-img-container {
+    justify-content: center;
+    align-items: end;
+  }
+
+  .crew-img-container img {
+    max-height: 500px;
+    max-width: 100%;
+  }
+}
+
+/* ========================
+   MOBILE STYLES
+========================= */
+@media (max-width: 45em) {
+  .crew-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .crew-img-container {
+    order: 3; /* Forcer l’image à passer en bas */
+    margin-top: 2rem;
+  }
+
+  .crew-img-container img {
+    width: 70%;
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+}
