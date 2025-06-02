@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import techData from '../../../public/data/destination.json'; // tu peux garder ce JSON pour titre, desc, etc.
+import techData from '../../assets/data/technology.json'; // chemin corrigé
 import './Tech.css';
 
-// Importe les images localement (adapté au chemin depuis components/technology)
+// Import des images locales
 import launchVehicleImg from '../../assets/img/assets/technology/image-launch-vehicle-portrait.jpg';
 import spaceCapsuleImg from '../../assets/img/assets/technology/image-space-capsule-portrait.jpg';
 import spacePortImg from '../../assets/img/assets/technology/image-spaceport-portrait.jpg';
@@ -10,27 +10,17 @@ import spacePortImg from '../../assets/img/assets/technology/image-spaceport-por
 const Technology = () => {
   const [selectedTech, setSelectedTech] = useState(0);
 
-  // Associer ici les images aux données correspondantes
-  const technologies = techData.technology.map((tech, index) => {
-    let img;
-    switch (tech.id) {
-      case 1:
-        img = launchVehicleImg;
-        break;
-      case 2:
-        img = spaceCapsuleImg;
-        break;
-      case 3:
-        img = spacePortImg;
-        break;
-      default:
-        img = null;
-    }
-    return {
-      ...tech,
-      image: img,
-    };
-  });
+  // Associer les images aux données selon leur ID ou nom
+  const imageMap = {
+    1: launchVehicleImg,
+    2: spaceCapsuleImg,
+    3: spacePortImg,
+  };
+
+  const technologies = techData.technology.map((tech) => ({
+    ...tech,
+    image: imageMap[tech.id] || null,
+  }));
 
   const currentTech = technologies[selectedTech];
 
@@ -46,7 +36,7 @@ const Technology = () => {
             {technologies.map((_, index) => (
               <button
                 key={index}
-                className={`${selectedTech === index ? 'active' : ''}`}
+                className={selectedTech === index ? 'active' : ''}
                 onClick={() => setSelectedTech(index)}
                 aria-selected={selectedTech === index}
               >
