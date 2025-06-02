@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/img/assets/shared/logo.svg';  // import du logo ici
 import './Header.css';
 
 const Header = () => {
@@ -13,7 +14,6 @@ const Header = () => {
     { name: 'TECHNOLOGY', path: '/technology', number: '03' },
   ];
 
-  // Empêcher le scroll quand le menu est ouvert (tu gères ça très bien)
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('menu-open');
@@ -38,7 +38,6 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  // Fermer le menu avec la touche Escape
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && isMenuOpen) {
@@ -67,7 +66,7 @@ const Header = () => {
     <>
       <header className="primary-header">
         {/* Logo */}
-        <img className="logo" src="/public/img/assets/shared/logo.svg" alt="Logo" />
+        <img className="logo" src={logo} alt="Logo" />
 
         {/* Bouton hamburger */}
         <button
@@ -93,7 +92,7 @@ const Header = () => {
                 <Link
                   to={path}
                   className={location.pathname === path ? 'active' : ''}
-                  onClick={() => setIsMenuOpen(false)} // ferme le menu au clic
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <span>{number}</span>
                   {name}

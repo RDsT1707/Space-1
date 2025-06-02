@@ -3,25 +3,21 @@
     {
       "id": "mars",
       "description": "Don’t forget to pack your hiking boots...",
-      "image": "/img/assets/destination/image-mars.webp",
       "travelTime": "9 months"
     },
     {
       "id": "moon",
       "description": "See our planet as you’ve never seen it before...",
-      "image": "/img/assets/destination/image-moon.webp",
       "travelTime": "3 days"
     },
     {
       "id": "titan",
       "description": "The only moon known to have a dense atmosphere...",
-      "image": "/img/assets/destination/image-titan.webp",
       "travelTime": "7 years"
     },
     {
       "id": "europa",
       "description": "The smallest of the four Galilean moons...",
-      "image": "/img/assets/destination/image-europa.webp",
       "travelTime": "3 years"
     }
   ],
@@ -30,48 +26,41 @@
       "id": 1,
       "title": "LAUNCH VEHICLE",
       "subtitle": "THE TERMINOLOGY...",
-      "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
-      "image": "./public/img/assets/technology/image-launch-vehicle-portrait.jpg"
+      "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
     },
     {
       "id": 2,
       "title": "SPACE CAPSULE",
       "subtitle": "THE TERMINOLOGY...",
-      "description": "A space capsule is a spacecraft designed to transport cargo, scientific experiments, and/or astronauts to and from space. Our advanced capsules feature life support systems, heat shields, and comfortable accommodations for long-duration flights.",
-      "image": "./public/img/assets/technology/image-space-capsule-portrait.jpg"
+      "description": "A space capsule is a spacecraft designed to transport cargo, scientific experiments, and/or astronauts to and from space. Our advanced capsules feature life support systems, heat shields, and comfortable accommodations for long-duration flights."
     },
     {
       "id": 3,
       "title": "SPACE PORT",
       "subtitle": "THE TERMINOLOGY...",
-      "description": "A spaceport is a site for launching or receiving spacecraft. Our state-of-the-art facility includes launch pads, mission control, astronaut training centers, and passenger terminals designed for the ultimate space travel experience.",
-      "image": "./public/img/assets/technology/image-spaceport-portrait.jpg"
+      "description": "A spaceport is a site for launching or receiving spacecraft. Our state-of-the-art facility includes launch pads, mission control, astronaut training centers, and passenger terminals designed for the ultimate space travel experience."
     }
   ],
   "crew": [
     {
       "role": "Commander",
       "name": "Douglas Hurley",
-      "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
-      "image": "./public/img/assets/crew/image-douglas-hurley.png"
+      "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
     },
     {
       "role": "Pilot",
       "name": "Anousheh Ansari",
-      "bio": "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
-      "image": "./public/img/assets/crew/image-anousheh-ansari.png"
+      "bio": "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
     },
     {
       "role": "Pilot",
       "name": "Victor Glover",
-      "bio": "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18. He was a crew member of Expedition 64, and served as a station systems flight engineer.",
-      "image": "./public/img/assets/crew/image-victor-glover.png"
+      "bio": "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18. He was a crew member of Expedition 64, and served as a station systems flight engineer."
     },
     {
       "role": "Mission Specialist",
       "name": "Mark Shuttleworth",
-      "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
-      "image": "./public/img/assets/crew/image-mark-shuttleworth.png"
+      "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
     }
   ]
 }

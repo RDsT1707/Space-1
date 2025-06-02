@@ -1,10 +1,37 @@
 import { useState } from 'react';
-import planetsData from '../../../public/data/destination.json';
+import techData from '../../../public/data/destination.json'; // tu peux garder ce JSON pour titre, desc, etc.
 import './Tech.css';
+
+// Importe les images localement (adapté au chemin depuis components/technology)
+import launchVehicleImg from '../../assets/img/assets/technology/image-launch-vehicle-portrait.jpg';
+import spaceCapsuleImg from '../../assets/img/assets/technology/image-space-capsule-portrait.jpg';
+import spacePortImg from '../../assets/img/assets/technology/image-spaceport-portrait.jpg';
 
 const Technology = () => {
   const [selectedTech, setSelectedTech] = useState(0);
-  const technologies = planetsData.technology;
+
+  // Associer ici les images aux données correspondantes
+  const technologies = techData.technology.map((tech, index) => {
+    let img;
+    switch (tech.id) {
+      case 1:
+        img = launchVehicleImg;
+        break;
+      case 2:
+        img = spaceCapsuleImg;
+        break;
+      case 3:
+        img = spacePortImg;
+        break;
+      default:
+        img = null;
+    }
+    return {
+      ...tech,
+      image: img,
+    };
+  });
+
   const currentTech = technologies[selectedTech];
 
   return (
@@ -12,7 +39,7 @@ const Technology = () => {
       <h1 className="numbered-title">
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
-      
+
       <div className="technology-content grid">
         <div className="technology-main">
           <div className="technology-tabs flex">

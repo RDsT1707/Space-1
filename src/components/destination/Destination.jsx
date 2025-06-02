@@ -1,20 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Destination.css';
 
+// Import des images
+import marsImg from "../../assets/img/assets/destination/image-mars.webp";
+import moonImg from "../../assets/img/assets/destination/image-moon.webp";
+import europaImg from "../../assets/img/assets/destination/image-europa.webp";
+import titanImg from "../../assets/img/assets/destination/image-titan.webp";
+
+
+const planetsData = [
+  {
+    id: 'mars',
+    description: "Don’t forget to pack your hiking boots...",
+    travelTime: '9 months',
+    image: marsImg
+  },
+  {
+    id: 'moon',
+    description: "See our planet as you’ve never seen it before...",
+    travelTime: '3 days',
+    image: moonImg
+  },
+  {
+    id: 'titan',
+    description: "The only moon known to have a dense atmosphere...",
+    travelTime: '7 years',
+    image: titanImg
+  },
+  {
+    id: 'europa',
+    description: "The smallest of the four Galilean moons...",
+    travelTime: '3 years',
+    image: europaImg
+  }
+];
+
 const Destination = () => {
-  const [planets, setPlanets] = useState([]);
   const [selectedPlanet, setSelectedPlanet] = useState(0);
 
-  useEffect(() => {
-    fetch('/data/destination.json')
-      .then((res) => res.json())
-      .then((data) => setPlanets(data.planets))
-      .catch((err) => console.error('Erreur de chargement JSON', err));
-  }, []);
-
-  if (planets.length === 0) return <p>Chargement...</p>;
-
-  const currentPlanet = planets[selectedPlanet];
+  const currentPlanet = planetsData[selectedPlanet];
 
   return (
     <section className="destination grid container">
@@ -27,7 +51,7 @@ const Destination = () => {
 
         <div className="destination-info flow">
           <div className="destination-tabs flex underline-indicators">
-            {planets.map((planet, index) => (
+            {planetsData.map((planet, index) => (
               <button
                 key={planet.id}
                 className={`uppercase ff-sans-cond text-accent letter-spacing-2 ${
